@@ -4,8 +4,14 @@
 #include "Edge.h"
 #include "Graph.h"
 
+
+#undef GRAPH_FROM_MANUAL_INPUT
+#define GRAPH_FROM_FILE
+
+
 int main() {
 
+#ifdef GRAPH_FROM_MANUAL_INPUT
     /*
         {1, 2, 3, 4, 5, 6, 7}
         { (1, 2, 7), (1, 3, 9), (1, 6, 14), (2, 3, 10), (2, 4, 15), (3, 4, 11), (3, 6, 2), (4, 5, 6), (5, 6, 9)}
@@ -31,6 +37,13 @@ int main() {
 
     Graph graph = Graph(vertices, edges, 1, 5);
     graph.dijkstra();
+#endif
+
+#ifdef GRAPH_FROM_FILE
+    Graph graph = Graph("../input.txt");
+    graph.print();
+    graph.dijkstra();
+#endif
 
     return 0;
 }

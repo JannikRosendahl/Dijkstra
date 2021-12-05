@@ -18,11 +18,11 @@ private:
     bool visited;
 public:
     [[nodiscard]] int get_id() const;
-    int get_distance() const;
-    Vertex* get_predecessor() const;
-    bool get_visited() const;
-    std::set<Vertex*> get_neighbours() const;
-    std::set<Edge*> get_edges() const;
+    [[nodiscard]] int get_distance() const;
+    [[nodiscard]] Vertex* get_predecessor() const;
+    [[nodiscard]] bool get_visited() const;
+    [[nodiscard]] std::set<Vertex*> get_neighbours() const;
+    [[nodiscard]] std::set<Edge*> get_edges() const;
 
     void set_distance(int d);
     void set_predecessor(Vertex* v);

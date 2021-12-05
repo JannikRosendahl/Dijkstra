@@ -24,7 +24,7 @@ public:
     Edge(int start, int end, int weight);
     void add_vertex(Vertex* v);
 
-    int get_weight() const;
+    [[nodiscard]] int get_weight() const;
 };
 
 

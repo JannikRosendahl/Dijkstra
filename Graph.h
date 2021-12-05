@@ -19,6 +19,7 @@ private:
     void generate_associations();
 public:
     Graph(std::vector<Vertex> vertices, std::vector<Edge> edges, int start, int end);
+    explicit Graph(const std::string& input_file_name);
     void dijkstra();
     void print();
 };
